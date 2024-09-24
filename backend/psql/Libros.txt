@@ -1,5 +1,6 @@
 --No use promocion para mi caso de uso. Lautaro
 -- agregar en package json
+--Para filtrar por numero usar $ porque si no lo toma como un integer 
 
   "scripts": {
     "start": "node server.js",

@@ -2,6 +2,10 @@
 Requerimientos -
 Historias de Usuario para la SPA de Películas consumiendo la API de TMDB -
 https://developer.themoviedb.org/docs/getting-started
+
+
+
+
 HECHO
 Visualización de Películas Populares 
 Como usuario de la aplicación,

@@ -16,6 +16,8 @@ Criterios de Aceptación:
 - Cada película debe mostrarse como una tarjeta con su póster y título.
 - La grilla debe ser responsive y ajustarse a diferentes tamaños de pantalla.
 
+
+HECHO
 02
 Historia de Usuario 2: Paginación de Películas
 

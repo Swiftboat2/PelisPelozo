@@ -3,11 +3,22 @@ import { Input } from "@/components/ui/input"
 import PelisApi from '../hooks/PelisApi'
 import { useState } from 'react'
 
-
 function Peliculas() {
 console.log(PelisApi())
 const [buscarPeli, setBuscarPeli] = useState('')
-const {Pelis, filtrar, setFiltrar, setPagina} = PelisApi()
+const { Pelis, setFiltrar, pagina, setPagina, totalPaginas } = PelisApi();
+
+const AnteriorPagina = () => {
+    if (pagina > 1) {
+        setPagina(pagina - 1);
+    }
+};
+
+const ProximaPagina = () => {
+    if (pagina < totalPaginas) {
+        setPagina(pagina + 1);
+    }
+};
 
 const handleSearch  = () => {
    setFiltrar(buscarPeli)
@@ -17,17 +28,20 @@ const handleSearch  = () => {
 return (
 <>
 <div className='flex justify-center'>
-    <Input 
-   className="xl:w-[500px] md:w-[400px] sm:w-[100px] sm:h-8 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 -translate-y-14 ml-2 "
-   placeholder="Buscar Pelicula"
-   value={filtrar}
-   onChange={(e) => setBuscarPeli(e.target.value)} 
-    />
-    <button className='bg-gray-500 pr-2 rounded-md w-15 xl:w-20 h-8 text-white font-bold hover:bg-gray-600 transition duration-300   xl:-translate-y-[56px] xl:translate-x-[6px] md:-translate-y-[55px] md:translate-x-[6px] pl-2 -translate-y-[54px] translate-x-[1px]'
-    onClick={handleSearch}
-    type="submit">
-        Buscar
-     </button>
+<Input 
+          className="xl:w-[500px] md:w-[400px] sm:w-[100px] sm:h-8 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 -translate-y-14 ml-2"
+          placeholder="Buscar Pelicula"
+          type='text'
+          value={buscarPeli}
+          onChange={(e) => setBuscarPeli(e.target.value)}
+        />
+        <button 
+          className='bg-gray-500 pr-2 rounded-md w-15 xl:w-20 h-8 text-white font-bold hover:bg-gray-600 transition duration-300 xl:-translate-y-[56px] xl:translate-x-[6px] md:-translate-y-[55px] md:translate-x-[6px] pl-2 -translate-y-[54px] translate-x-[1px]'
+          onClick={handleSearch}
+          type="submit"
+        >
+          Buscar
+        </button>
 </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 '>
           {Pelis.map((peli) => (
@@ -70,6 +84,11 @@ return (
               </div>
             </div>
           ))}
+        </div>
+        <div className=" items-center flex justify-center text-center h-20 bg-black">
+                <button className='text-white' onClick={AnteriorPagina} disabled={pagina === 1}>Anterior</button>
+                <p className='text-white ml-5 mr-5'>Página: {pagina} / {totalPaginas}</p>
+                <button className='text-white' onClick={ProximaPagina} disabled={pagina === totalPaginas}>Siguiente</button>
         </div>
     </>
   );

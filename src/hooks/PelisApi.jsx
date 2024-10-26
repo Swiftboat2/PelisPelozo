@@ -27,6 +27,7 @@ function PelisApi() {
                 if (filtrar) {
                     setPagina(1);
                 }
+            
             } catch (error) {
                 console.error('Error al obtener datos de la API:', error);
                 setError(error.message);
@@ -35,12 +36,13 @@ function PelisApi() {
 
         fetchPelis();
     }, [api_key, pagina, filtrar]);
+
       
     if (error) {
         return <div className="text-red-500 font-bold text-center mt-4">Error: {error}</div>;
     }
 
-    return { Pelis, setFiltrar, pagina, setPagina, totalPaginas };
+    return { Pelis, setFiltrar, pagina, setPagina, totalPaginas, filtrar,  };
 }  
 
 export default PelisApi;

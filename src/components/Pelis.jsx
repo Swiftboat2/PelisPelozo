@@ -2,11 +2,14 @@ import '../index.css'
 import { Input } from "@/components/ui/input"
 import PelisApi from '../hooks/PelisApi'
 import { useState } from 'react'
+import PeliInfo from '../hooks/PeliInfoApi'
 
 function Peliculas() {
 console.log(PelisApi())
 const [buscarPeli, setBuscarPeli] = useState('')
 const { Pelis, setFiltrar, pagina, setPagina, totalPaginas } = PelisApi();
+const info = PeliInfo()
+
 
 const AnteriorPagina = () => {
     if (pagina > 1) {
@@ -55,7 +58,9 @@ return (
                   />
                   <div className="group p-5 grid z-10">
                     <a
-                      href={`https://www.themoviedb.org/movie/${peli.id}`}
+                      href={PeliInfo(peli.title)}
+                      onClick={() => PeliInfo(peli.title)}
+                      target='_blank'
                       className="group-hover:text-cyan-700 font-bold md:text-2xl line-clamp-2"
                     >
                       {peli.title}

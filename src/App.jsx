@@ -15,7 +15,7 @@ function App() {
     </>
     } 
      />
-    <Route path="'/:title'" element={<PeliInfo />} />
+    <Route path='/peli/:id' element={<PeliInfo />} />
     </Routes>
     </Router>
   )

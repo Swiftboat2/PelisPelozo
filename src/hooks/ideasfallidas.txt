@@ -17,3 +17,26 @@
               }
           return Pelis
         */
+        {/*
+    <div>
+         <ul>
+         {peliTrailer.map((peliTrailer, index) => 
+            peliTrailer.type === 'Trailer' && 
+            peliTrailer.site === 'YouTube' && 
+            peliTrailer.key ? (
+                <li key={index}>
+                <iframe
+                title={`Trailer de la película - ${peliTrailer.name}`} // Agrega un título único
+                width="560"
+                height="315"
+                src={`https://www.youtube.com/embed/${peliTrailer.key}?autoplay=0&controls=1`} // URL corregida
+                className="w-full h-auto"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                />
+                </li>
+                ) : null
+                )}
+                </ul> 
+                </div>
+                */}

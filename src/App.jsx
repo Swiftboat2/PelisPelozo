@@ -3,6 +3,7 @@ import Pelis from './components/Pelis';
 import PeliInfo from './components/PeliInfo';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
+import TrailerPeli from './components/TrailerPeli';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     } 
      />
     <Route path='/peli/:id' element={<PeliInfo />} />
+    <Route path='/trailers/:id' element={<TrailerPeli />} />
     </Routes>
     </Router>
   )

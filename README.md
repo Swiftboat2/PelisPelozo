@@ -44,8 +44,9 @@ Criterios de Aceptación:
 - La búsqueda debe iniciarse al presionar Enter o al hacer clic en un botón de
 búsqueda.
 - Los resultados de la búsqueda deben reemplazar la grilla de películas populares.
-- La paginación debe funcionar correctamente con los resultados de búsqueda.
+- La paginación debe funcionar correctamente con los resultados de búsqueda
 
+HECHO
 04
 Visualización de Detalles de Película
 ## Historia de Usuario 4: Visualización de Detalles de Película
@@ -57,6 +58,8 @@ Criterios de Aceptación:
 - La página de detalles debe mostrar el título, póster, sinopsis, fecha de lanzamiento y
 calificación de la película.
 - Debe haber un enlace para ver los trailers de la película.
+
+HECHO
 05
 Visualización de Trailers
 ## Historia de Usuario 6: Visualización de Trailers

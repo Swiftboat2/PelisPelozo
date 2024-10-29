@@ -33,7 +33,7 @@ const handleSearch  = () => {
     <>
       <div className='flex justify-center'>
         <Input 
-          className="xl:w-[500px] md:w-[400px] sm:w-[100px] sm:h-8 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 -translate-y-14 ml-2"
+          className="lg:w-[500px] md:w-[400px] w-[180px] sm:h-8 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 -translate-y-14 ml-2"
           placeholder="Buscar Pelicula"
           type='text'
           value={buscarPeli}

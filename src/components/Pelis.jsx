@@ -29,6 +29,7 @@ const handleSearch  = () => {
  }
 
 //const Pelicula = Object.keys(PelisApi())
+
   return (
     <>
       <div className='flex justify-center'>
@@ -50,7 +51,7 @@ const handleSearch  = () => {
       
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         {Pelis.length > 0 ? Pelis.map((peli) => (
-          <div key={peli.id} className='flex items-center justify-center h-screen w-full'>
+          <div key={peli.id} className='flex items-center justify-center mt-10 mb-20 h-screen w-full'>
             <div className='mx-auto bg-white rounded-3xl shadow-xl'>
               <div className="grid rounded-3xl max-w-[360px] shadow-sm bg-slate-100 flex-col">
                 <img
@@ -72,9 +73,9 @@ const handleSearch  = () => {
                 </span>
                 <div className="h-20"></div>
                 <div className="grid-cols-2 flex group justify-between">
-                  <div className="font-black flex flex-col">
+                  <div className=" ml-5 font-black flex flex-col">
                     <span className="text-yellow-500 text-xl">Rating</span>
-                    <span className="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
+                    <span className="text-3xl mb-5 flex gap-x-1 items-center group-hover:text-yellow-600">
                       {parseFloat(peli.vote_average).toFixed(2)}
                       <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" strokeWidth="0" />
